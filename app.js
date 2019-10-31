@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const ghanaRegions = [
     { state: 'Oti Region', capital: 'Dambai' },
@@ -19,6 +20,8 @@ const ghanaRegions = [
     { state: 'Upper East Region', capital: 'Bolgatanga' },
     { state: 'Upper West Region', capital: 'Wa' }
 ];
+
+app.use(cors());
 
 app.get('/', (req, res) => {
     res.json(ghanaRegions);
